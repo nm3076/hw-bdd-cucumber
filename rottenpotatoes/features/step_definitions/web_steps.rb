@@ -247,6 +247,7 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   else
     assert_equal expected_params, actual_params
   end
+    
 end
 
 Then /^show me the page$/ do
