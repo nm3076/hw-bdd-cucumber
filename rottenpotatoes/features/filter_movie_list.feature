@@ -44,4 +44,4 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 Scenario: all ratings selected
   # see assignment
-  Then I should see all the movies
+  Then I should see all of the movies

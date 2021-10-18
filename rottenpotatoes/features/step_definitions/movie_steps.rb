@@ -19,7 +19,10 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
+  # fail "Unimplemented"
+    page_body = page.body
+    el_regex = "#{e1}.*#{e2}"
+    expect(page_body) =~ el_regex
 end
 
 # Make it easier to express checking or unchecking several boxes at once
@@ -40,7 +43,7 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   #fail "Unimplemented"
 end
 
-Then /I should see all the movies/ do
+Then /I should see all of the movies/ do
   # Make sure that all the movies in the app are visible in the table
   # fail "Unimplemented"
   rows = page.all('table#movies tr').count
